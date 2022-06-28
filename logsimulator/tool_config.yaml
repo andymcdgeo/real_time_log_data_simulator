@@ -1,0 +1,11 @@
+appName: logsimulator
+
+LOGGING_MODE: 'LWD'
+
+
+LOGGING_TOOL_MEASURE_POINTS:
+  GAMMA: 6
+  NEUT: 20
+  DENS: 25
+  RES: 3
+  DT: 
