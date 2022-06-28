@@ -1,5 +1,6 @@
 import pandas as pd
 import time
+import schedule
 
 from . import datasource
 
@@ -13,7 +14,16 @@ class rtsim:
             raise TypeError('Supplied data must be a pd.DataFrame')
 
     def run(self):
-        raise NotImplemented
+        schedule.every(5).seconds.do(self.get_next_depth)
+
+    def get_next_depth(self):
+        depth_level = 0
+        while depth_level <= len(self.data):
+            print(f'{self.data.loc[[depth_level]]}')
+            time.sleep(self.update_interval_secs)
+            print(depth_level)
+
+            depth_level += 1
 
 if __name__ == "__main__":
     rtsim(data='aaa')

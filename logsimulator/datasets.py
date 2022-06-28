@@ -22,7 +22,7 @@ def load_volve_19_dataset() -> pd.DataFrame:
         Returns a pandas dataframe object containing data from well 15/9-19 of the Volve field
     """
     stream = pkg_resources.resource_stream(__name__, 'data/EQR_Volve_Well_15_9-19.csv')
-    return pd.read_csv(stream, encoding='latin-1')
+    return pd.read_csv(stream)
 
 def load_volve_f5_dataset() -> pd.DataFrame:
     raise NotImplemented
